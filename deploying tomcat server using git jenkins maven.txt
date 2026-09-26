@@ -14,5 +14,8 @@ wget https://dlcdn.apache.org/maven/mvnd/1.0.6/maven-mvnd-1.0.6-linux-aarch64.ta
 tar -xzvf maven-mvnd-1.0.6-linux-aarch64.tar.gz       (to untar the tar file)
 dnf install maven -y
 systemctl status jenkins --no-pager (from EC2 jenkins server run this so that jenkins active running)
+add the plugins and tools from manage jenkins tab
+after that install git 
+sudo yum git
 
 
