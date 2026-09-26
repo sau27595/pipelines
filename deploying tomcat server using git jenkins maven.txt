@@ -1,1 +1,14 @@
-
+login to aks server 
+sudo su -- to switch to root user
+cd ~  --go to root directory
+sudo yum upgrade
+sudo yum update
+#go to jenkins official page https://www.jenkins.io/doc/book/installing/linux/ and follow the installation process
+sudo wget -O /etc/yum.repos.d/jenkins.repo \https://pkg.jenkins.io/rpm-stable/jenkins.repo
+yum install java-21-amazon-corretto -y
+#login to to EC2 instance and expose the traffic on port 8080 from security group 
+ cd ~
+### installing maven on jenkins server
+cd /opt
+wget https://dlcdn.apache.org/maven/mvnd/1.0.6/maven-mvnd-1.0.6-linux-aarch64.tar.gz    
+tar -xzvf maven-mvnd-1.0.6-linux-aarch64.tar.gz       (to untar the tar file)
