@@ -1,1 +1,49 @@
+pipeline {
+
+    agent any
+
+    tools {
+        jdk 'Java21'
+        maven 'Maven'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Checking out source code...'
+                checkout scm
+            }
+        }
+
+        stage('Java Version') {
+            steps {
+                sh 'java -version'
+            }
+        }
+
+        stage('Maven Version') {
+            steps {
+                sh 'mvn -version'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+
+    }
+
+    post {
+        success {
+            echo 'BUILD SUCCESSFUL'
+        }
+
+        failure {
+            echo 'BUILD FAILED'
+        }
+    }
+}
 
